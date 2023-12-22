@@ -17,8 +17,8 @@ public class PipeAndFilter {
 
 
         Pipe<String> pipe = new Pipe<>();
-        String filePath = "src/data.txt";
-        List<String> data= new ArrayList<>();
+        String filePath = "DIANS-Homework 1/DIANS-Homework-1/src/data.txt";
+        List<String> data = new ArrayList<>();
 
 
         try {

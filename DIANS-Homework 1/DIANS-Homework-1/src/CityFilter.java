@@ -20,7 +20,7 @@ public class CityFilter implements Filter {
             System.out.println("City: " + PipeAndFilter.removeWhiteSpacesAndQuotes(c));
             List<String> modifiedParts = IntStream.range(0, parts.size())
                     .filter(i -> i != deleteIndex)
-                    .mapToObj(parts::get).toList();
+                    .mapToObj(parts::get).collect(Collectors.toList());
 
             return modifiedParts.stream().collect(Collectors.joining("\n"));
         }
