@@ -1,11 +1,11 @@
 package mk.ukim.finki.nationalheritage.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Data;
 
+@Table (name="heritages") // TODO ASSIGN DATA SOURCE
 @Entity
+@Data
 public class Heritage {
     public Heritage() {
     }
