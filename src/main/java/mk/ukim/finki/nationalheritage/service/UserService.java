@@ -9,7 +9,7 @@ public interface UserService {
 
     public interface UserInterface {
 
-        //TODO exceptions annotation
+
         /**
          * @return List of all entities in the database
          */
