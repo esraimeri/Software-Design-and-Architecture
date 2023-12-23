@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <title>Contact</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 
 <body>
 <div class="full-page">
   <div class="navbar">
-    <img src="logo.png" class="logo_img">
+    <img th:src="@{/images/logo.png}" class="logo_img">
     <nav>
       <ul id='MenuItems'>
-        <li><a href='about_us.html'>ABOUT US</a></li>
-        <li><a href='#'>CONTACT</a></li>
-        <li><a href='login_register.html'>LOGIN</a></li>
+        <li><a th:href="@{/about_us}">ABOUT US</a></li>
+        <li><a th:href="@{/contact}">CONTACT</a></li>
+        <li><a th:href="@{/login_register}">LOGIN</a></li>
       </ul>
     </nav>
   </div>

@@ -7,17 +7,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping("/about_us")
-public class AboutUsController {
+@RequestMapping("/contact")
+public class ContactController {
+    @RequestMapping(method = RequestMethod.GET)
+    @ResponseBody
+    ModelAndView index()
+    {
+        return  new ModelAndView("contact");
 
-        @RequestMapping(method = RequestMethod.GET)
-        @ResponseBody
-        ModelAndView index()
-        {
-            return  new ModelAndView("about_us");
-
-        }
-
-
-
+    }
 }

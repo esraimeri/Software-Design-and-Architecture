@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <title>About us</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
 </head>
 
 <body>
 <div class="full-page">
   <div class="navbar">
-    <img src="logo.png" class="logo_img">
+    <img th:src="@{/images/logo.png}" class="logo_img">
     <nav>
       <ul id='MenuItems'>
         <li><a th:href="@{/about_us}">ABOUT US</a></li>
