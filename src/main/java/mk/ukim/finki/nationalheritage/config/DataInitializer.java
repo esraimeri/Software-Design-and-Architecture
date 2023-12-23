@@ -19,8 +19,9 @@ public class DataInitializer {
 
     private final HeritageService heritageService;
     private final UserService userService;
-    private final HeritageRepository heritageRepository; // Assuming you have HeritageRepository
+    private final HeritageRepository heritageRepository;
     private final Random random;
+
     public DataInitializer(HeritageService heritageService, UserService userService, HeritageRepository heritageRepository) {
         this.heritageService = heritageService;
         this.userService = userService;
