@@ -55,11 +55,16 @@ public class PipeAndFilter {
         pipe.addFilter(websiteFilter);
         pipe.addFilter(coordinatesFilter);
 
+        StringBuilder sb = new StringBuilder();
+        TableCreatorFilter tcf = new TableCreatorFilter();
 
         data.forEach(i ->{
             if(i.contains("name")){
                 pipe.runFilter(i);
+                sb.append(tcf.execute(pipe.getData()));
             }
         });
+
+        System.out.println(sb.toString());
     }
 }
