@@ -3,6 +3,9 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class CityFilter implements Filter {
+
+    private String data;
+
     @Override
     public Object execute(Object input) {
         String in = input.toString();
@@ -17,7 +20,8 @@ public class CityFilter implements Filter {
 
         if (deleteIndex != -1) {
             String c = parts.get(deleteIndex).split(": ")[1];
-            System.out.println("City: " + PipeAndFilter.removeWhiteSpacesAndQuotes(c));
+            this.data = "City: " + PipeAndFilter.removeWhiteSpacesAndQuotes(c);
+            //System.out.println(data);
             List<String> modifiedParts = IntStream.range(0, parts.size())
                     .filter(i -> i != deleteIndex)
                     .mapToObj(parts::get).collect(Collectors.toList());
@@ -30,4 +34,8 @@ public class CityFilter implements Filter {
 
     }
 
+    @Override
+    public String getData() {
+        return data;
+    }
 }

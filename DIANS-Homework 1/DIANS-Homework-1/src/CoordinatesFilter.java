@@ -4,6 +4,8 @@ import java.util.stream.Collectors;
 
 public class CoordinatesFilter implements Filter {
 
+    private String data;
+
     public Object execute(Object input) {
         String in = input.toString();
         List<String> parts = new ArrayList<>(List.of(in.split("\n")));
@@ -14,13 +16,14 @@ public class CoordinatesFilter implements Filter {
         for (int i = 0; i < parts.size(); i++) {
             if (parts.get(i).contains("\"coordinates\"")) {
                 String tmo = parts.get(i + 1);
-                c = String.format("Geolocation: %s %s\n", parts.get(i + 2).trim(), tmo.substring(0, tmo.length() - 1).trim());
+                this.data = String.format("Geolocation: %s %s\n", parts.get(i + 2).trim(), tmo.substring(0, tmo.length() - 1).trim());
+                c = data;
                 deleteIndex = i;
                 break;
             }
         }
 
-        System.out.println(c);
+        //System.out.println(c);
 
 
         parts.remove(deleteIndex);
@@ -32,5 +35,10 @@ public class CoordinatesFilter implements Filter {
         }
 
         return parts.stream().collect(Collectors.joining("\n"));
+    }
+
+    @Override
+    public String getData() {
+        return data;
     }
 }

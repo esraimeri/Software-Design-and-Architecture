@@ -26,6 +26,11 @@ public class GeneralCleanerFilter implements Filter {
         return removeCommas(String.join("", newLines));
     }
 
+    @Override
+    public String getData() {
+        return "";
+    }
+
     private List<Character> filterOutTargets(char[] parts, char[] targets) {
 
         return new String(parts)
