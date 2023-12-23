@@ -1,0 +1,82 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="full-page">
+    <div class="navbar">
+        <img src="logo.png" class="logo_img">
+        <nav>
+            <ul id='MenuItems'>
+                <li><a href='about_us.html'>ABOUT US</a></li>
+                <li><a href='contact.html'>CONTACT</a></li>
+                <li><button class='loginbtn' onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">LOGIN</button></li>
+            </ul>
+        </nav>
+    </div>
+    <div id='login-form' class='login-page'>
+        <div class="form-box">
+            <div class='button-box'>
+                <div id='btn'></div>
+                <button type='button' onclick='login()' class='toggle-btn'>Log In</button>
+                <button type='button' onclick='register()' class='toggle-btn'>Register</button>
+            </div>
+            <form id='login' class='input-group-login' onsubmit='redirectToHome(); return false;'>
+                <input type='text' class='input-field' id="LUsername" placeholder='Username' required>
+                <input type='password' class='input-field' placeholder='Password' required>
+                <input type='checkbox' class='check-box'><span>Remember Password</span>
+                <button type='submit' class='submit-btn'>Log in</button>
+            </form>
+            <form id='register' class='input-group-register' onsubmit='redirectToHome(); return false;'>
+                <input type='text' class='input-field' placeholder='Name' required>
+                <input type='text' class='input-field' id="RUsername" placeholder='Username' required>
+                <input type='email' class='input-field' placeholder='Email' required>
+                <input type='password' class='input-field' placeholder='Password' required>
+                <input type='password' class='input-field' placeholder='Confirm Password'  required>
+                <input type='checkbox' class='check-box'><span>I agree to the terms and conditions</span>
+                <button type='submit' class='submit-btn'>Register</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    var x=document.getElementById('login');
+    var y=document.getElementById('register');
+    var z=document.getElementById('btn');
+    function register()
+    {
+        x.style.left='-400px';
+        y.style.left='50px';
+        z.style.left='110px';
+    }
+    function login()
+    {
+        x.style.left='50px';
+        y.style.left='450px';
+        z.style.left='0px';
+    }
+    function redirectToHome() {
+        var RUsername = document.getElementById('RUsername').value;
+        var LUsername = document.getElementById('LUsername').value;
+
+        window.location.href = "home.html?RUsername=" + encodeURIComponent(RUsername) + "&LUsername=" + encodeURIComponent(LUsername);
+    }
+</script>
+<script>
+    var modal = document.getElementById('login-form');
+    window.onclick = function(event)
+    {
+        if (event.target == modal)
+        {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>
