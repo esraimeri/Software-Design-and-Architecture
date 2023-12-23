@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService {
         user.setName(name);
         user.setEmail(email);
         user.setPassword(password);
-        user.setVisited(visitedHeritages);
+        user.setClosestHeritages(visitedHeritages);
         user.setBirthday(birthday);
 
         return userRepository.save(user);
@@ -86,4 +86,34 @@ public class UserServiceImpl implements UserService {
         }
         return null;
     }
+    @Override
+    public List<Heritage> getClosestHeritages(Long userId) {
+        User user = userRepository.findById(userId).orElseThrow(InvalidUserIdException::new);
+        Double latUser= user.getLat();
+        Double lonUser = user.getLon();
+        List<Heritage> heritages = this.heritageRepository.findAll();
+        return  heritages.stream()
+                .filter(l -> calculateDistance(l.getLat(), l.getLon(), latUser, lonUser) <= 65)
+                .collect(Collectors.toList());
+    }
+
+
+
+    public static Double calculateDistance(Double latHeritage, Double lonHeritage, Double latLocation, Double lonLocation)
+    {
+        Integer radius = 6371;
+        Double distanceLat = Math.toRadians(latLocation - latHeritage);
+        Double distanceLon = Math.toRadians(lonLocation - lonHeritage);
+
+        Double a = Math.sin(distanceLat / 2) * Math.sin(distanceLat / 2) +
+                Math.cos(Math.toRadians(latHeritage)) * Math.cos(Math.toRadians(latLocation))*
+
+                        Math.sin(distanceLon / 2) * Math.sin(distanceLon / 2);
+
+        Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        Double distance = radius * c;
+
+        return distance;
+    }
+
 }

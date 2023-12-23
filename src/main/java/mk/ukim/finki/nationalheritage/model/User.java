@@ -20,7 +20,7 @@ public class User {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.visited = visited;
+        this.closestHeritages = visited;
         this.birthday = birthday;
         generateRandomCoordinates();
     }
@@ -41,7 +41,7 @@ public class User {
     private Double lon;
 
     @ManyToMany(fetch = FetchType.EAGER)
-    private List<Heritage> visited;
+    private List<Heritage> closestHeritages;
 
     public Long getId() {
         return id;
@@ -76,12 +76,12 @@ public class User {
         this.password = password;
     }
 
-    public List<Heritage> getVisited() {
-        return visited;
+    public List<Heritage> getClosestHeritages() {
+        return closestHeritages;
     }
 
-    public void setVisited(List<Heritage> visited) {
-        this.visited = visited;
+    public void setClosestHeritages(List<Heritage> visited) {
+        this.closestHeritages = visited;
     }
 
     public LocalDate getBirthday() {

@@ -25,7 +25,7 @@ public class TypeFilter implements Filter {
             //System.out.println(data);
             List<String> modifiedParts = IntStream.range(0, parts.size())
                     .filter(i -> i != deleteIndex)
-                    .mapToObj(parts::get).collect(Collectors.toList());
+                    .mapToObj(parts::get).toList();
 
             return modifiedParts.stream().collect(Collectors.joining("\n"));
         }

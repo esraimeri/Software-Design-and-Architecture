@@ -1,5 +1,6 @@
 package mk.ukim.finki.nationalheritage.service;
 
+import mk.ukim.finki.nationalheritage.model.Heritage;
 import mk.ukim.finki.nationalheritage.model.HeritageType;
 import mk.ukim.finki.nationalheritage.model.User;
 
@@ -56,5 +57,6 @@ public interface UserService {
         //TODO different filters
         //this is only the general starting filter
         List<User> filter(String city, String description, HeritageType type, String location, LocalDate birthday, HeritageType heritageType);
+        List<Heritage> getClosestHeritages(Long userId);
 
 }

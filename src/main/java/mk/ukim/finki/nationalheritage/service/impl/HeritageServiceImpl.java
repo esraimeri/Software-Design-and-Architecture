@@ -8,6 +8,7 @@ import mk.ukim.finki.nationalheritage.service.HeritageService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class HeritageServiceImpl implements HeritageService {
@@ -68,5 +69,8 @@ public class HeritageServiceImpl implements HeritageService {
         }
         return null;
     }
+
+
+
 
 }
