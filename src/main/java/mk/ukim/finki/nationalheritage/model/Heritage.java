@@ -1,6 +1,8 @@
 package mk.ukim.finki.nationalheritage.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 
 @Entity
@@ -8,13 +10,22 @@ public class Heritage {
     public Heritage() {
     }
 
-    public Heritage(Long id, String name) {
+    public Heritage(Long id, HeritageType heritageType, String name, String englishName, String description, String phoneNumber, String website, String location) {
         this.id = id;
+        this.heritageType = heritageType;
         this.name = name;
+        this.englishName = englishName;
+        this.description = description;
+        this.phoneNumber = phoneNumber;
+        this.website = website;
+        this.location = location;
     }
 
     @Id
     private Long id;
+
+    @Enumerated(EnumType.STRING)
+    private HeritageType heritageType;
 
     private String name;
 
@@ -25,6 +36,16 @@ public class Heritage {
     private String phoneNumber;
 
     private String website;
+
+    private String location;
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public Long getId() {
         return id;
@@ -72,5 +93,13 @@ public class Heritage {
 
     public void setWebsite(String website) {
         this.website = website;
+    }
+
+    public HeritageType getHeritageType() {
+        return heritageType;
+    }
+
+    public void setHeritageType(HeritageType heritageType) {
+        this.heritageType = heritageType;
     }
 }
