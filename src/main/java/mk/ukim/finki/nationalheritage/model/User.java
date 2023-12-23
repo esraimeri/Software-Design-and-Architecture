@@ -71,7 +71,7 @@ public class User {
         return visited;
     }
 
-    public void setInterests(List<Heritage> visited) {
+    public void setVisited(List<Heritage> visited) {
         this.visited = visited;
     }
 

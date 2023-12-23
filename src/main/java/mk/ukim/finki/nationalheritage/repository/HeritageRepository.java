@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface HeritageRepository extends JpaRepository<Heritage,Long> {
     //TODO add aditional filters
-    List<Heritage> filterByHeritageTypeAndLocation(HeritageType heritageType, String location);
-    List<Heritage> filterByHeritageType(HeritageType heritageType, String location);
+    List<Heritage> findByHeritageTypeAndLocation(HeritageType heritageType, String location);
 
-    List<Heritage> filterByLocation(HeritageType heritageType, String location);
+    List<Heritage> findByHeritageType(HeritageType heritageType);
 
+    List<Heritage> findByLocation(String location);
 }

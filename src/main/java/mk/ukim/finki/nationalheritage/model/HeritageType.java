@@ -9,7 +9,7 @@ public enum HeritageType {
     CHURCH,
     AQUEDUCT,
     MONASTERY,
-    yes,   // AS PROVIDED BY THE OPEN STREET MAP SOFTWARE
+    YES,
     RUINS,
     CITY_GATE,
     BUILDING,
