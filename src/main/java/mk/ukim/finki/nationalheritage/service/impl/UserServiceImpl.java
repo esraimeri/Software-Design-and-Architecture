@@ -50,7 +50,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> filter(String city, String description, HeritageType type, String location,LocalDate birthday, HeritageType heritageType) {
         if(birthday!=null){
-            return this.userRepository.filterByBirthday();
+            return this.userRepository.filterByBirthday(birthday);
         }
         if(location!=null){
            // return this.heritageRepository.filterByLocation(heritageType,location);

@@ -1,9 +1,6 @@
 package mk.ukim.finki.nationalheritage.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -23,6 +20,7 @@ public class User {
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private LocalDate birthday;
