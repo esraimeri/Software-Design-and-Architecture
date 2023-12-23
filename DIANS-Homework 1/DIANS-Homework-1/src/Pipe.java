@@ -14,6 +14,7 @@ public class Pipe<T> {
 
         this.data = "";
         for (Filter<T> filter : filters) {
+            filter.clearData();
             input = filter.execute(input);
             data = this.data.concat(filter.getData() + "\n");
         }

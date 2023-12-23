@@ -43,4 +43,9 @@ public class DescriptionFilter implements Filter {
         return data;
     }
 
+    @Override
+    public void clearData() {
+        this.data = "";
+    }
+
 }

@@ -37,4 +37,9 @@ public class PhoneFilter implements Filter {
         return data;
     }
 
+    @Override
+    public void clearData() {
+        this.data = "";
+    }
+
 }

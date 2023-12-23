@@ -38,4 +38,9 @@ public class NameFilter implements Filter {
     public String getData() {
         return data;
     }
+
+    @Override
+    public void clearData() {
+        this.data = "";
+    }
 }

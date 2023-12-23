@@ -4,4 +4,6 @@ public interface Filter<T> {
 
     String getData();
 
+    void clearData();
+
 }

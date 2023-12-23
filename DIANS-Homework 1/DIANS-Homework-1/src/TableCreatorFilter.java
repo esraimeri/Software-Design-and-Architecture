@@ -16,60 +16,60 @@ public class TableCreatorFilter implements Filter{
             sb.append(locInfo[i].split(": ")[1]);
         }
         i++;
-        sb.append("    ");
+        sb.append(";    ");
 
         if(lines.contains("Name-EN") && !locInfo[i].equals("") && !locInfo[i].equals("null")){
             sb.append(locInfo[i].split(": ")[1]);
         }
         i++;
-        sb.append("    ");
+        sb.append(";    ");
 
         if(lines.contains("ID") && !locInfo[i].equals("") && !locInfo[i].equals("null")){
             sb.append(locInfo[i].split(": ")[1]);
         }
         i++;
-        sb.append("    ");
+        sb.append(";    ");
 
         if(lines.contains("Description") && !locInfo[i].equals("") && !locInfo[i].equals("null")){
             sb.append(locInfo[i].split(": ")[1]);
         }
         i++;
-        sb.append("    ");
+        sb.append(";    ");
 
         if(lines.contains("Type") && !locInfo[i].equals("") && !locInfo[i].equals("null")){
             sb.append(locInfo[i].split(": ")[1]);
         }
         i++;
-        sb.append("    ");
+        sb.append(";    ");
 
         if(lines.contains("Working hours") && !locInfo[i].equals("") && !locInfo[i].equals("null")){
             sb.append(locInfo[i].split(": ")[1]);
         }
         i++;
-        sb.append("    ");
+        sb.append(";    ");
 
         if(lines.contains("City") && !locInfo[i].equals("") && !locInfo[i].equals("null")){
             sb.append(locInfo[i].split(": ")[1]);
         }
         i++;
-        sb.append("    ");
+        sb.append(";    ");
 
         if(lines.contains("Phone") && !locInfo[i].equals("") && !locInfo[i].equals("null")){
             sb.append(locInfo[i].split(": ")[1]);
         }
         i++;
-        sb.append("    ");
+        sb.append(";    ");
 
         if(lines.contains("Website") && !locInfo[i].equals("") && !locInfo[i].equals("null")){
             sb.append(locInfo[i].split(": ")[1]);
         }
         i++;
-        sb.append("    ");
+        sb.append(";    ");
 
         if(lines.contains("Geolocation") && !locInfo[i].equals("") && !locInfo[i].equals("null")){
             sb.append(locInfo[i].split(": ")[1]);
         }
-        sb.append("    \n");
+        sb.append(";    \n");
 
         return sb.toString();
     }
@@ -77,6 +77,11 @@ public class TableCreatorFilter implements Filter{
     @Override
     public String getData() {
         return null;
+    }
+
+    @Override
+    public void clearData() {
+
     }
 
 }

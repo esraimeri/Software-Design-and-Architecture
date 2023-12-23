@@ -41,4 +41,9 @@ public class CoordinatesFilter implements Filter {
     public String getData() {
         return data;
     }
+
+    @Override
+    public void clearData() {
+        this.data = "";
+    }
 }

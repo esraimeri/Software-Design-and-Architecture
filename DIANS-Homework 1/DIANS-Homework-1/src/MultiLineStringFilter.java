@@ -40,4 +40,9 @@ public class MultiLineStringFilter implements Filter {
     public String getData() {
         return "";
     }
+
+    @Override
+    public void clearData() {
+
+    }
 }

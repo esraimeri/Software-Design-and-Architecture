@@ -39,4 +39,9 @@ public class TypeFilter implements Filter {
         return data;
     }
 
+    @Override
+    public void clearData() {
+        this.data = "";
+    }
+
 }

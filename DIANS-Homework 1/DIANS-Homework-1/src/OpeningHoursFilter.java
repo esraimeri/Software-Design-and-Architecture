@@ -38,4 +38,9 @@ public class OpeningHoursFilter implements Filter {
         return data;
     }
 
+    @Override
+    public void clearData() {
+        this.data = "";
+    }
+
 }

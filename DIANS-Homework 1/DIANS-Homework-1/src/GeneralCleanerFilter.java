@@ -31,6 +31,10 @@ public class GeneralCleanerFilter implements Filter {
         return "";
     }
 
+    @Override
+    public void clearData() {
+    }
+
     private List<Character> filterOutTargets(char[] parts, char[] targets) {
 
         return new String(parts)
