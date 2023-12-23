@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
 <head>
   <meta charset="UTF-8">
   <title>Home</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+
 </head>
 
 <body>
 <div class="full-page">
   <div class="navbar">
-    <img src="logo.png" class="logo_img">
-    <img src="pic.png" class="pic_img">
+    <img th:src="@{/images/logo.png}" class="logo_img">
+     <img th:src="@{/images/pic.png}" class="pic_img">
     <p id="username"></p>
     <nav>
       <ul id='MenuItems'>
-        <li><a href='about_us.html'>ABOUT US</a></li>
-        <li><a href='contact.html'>CONTACT</a></li>
-        <li><a href='login_register.html'>LOGOUT</a></li>
+        <li><a th:href="@{/about_us}">ABOUT US</a></li>
+        <li><a th:href="@{/contact}">CONTACT</a></li>
+        <li><a th:href="@{/login_register}">LOGOUT</a></li>
       </ul>
     </nav>
   </div>
 
   <input type="text" id="searchInput" placeholder="Search...">
 
-  <div id="dropdown2">
-    <button id="filter-btn">Find closest</button>
-  </div>
-
   <div id="map">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d129338.21929475522!2d21.390317451650745!3d41.99559075937033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13542077276dd153%3A0x400fae0216e7f048!2sSkopje%2C%20North%20Macedonia!5e0!3m2!1sen!2sus!4v1574172622710!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
   </div>
 
-  <button id="search-btn">Search</button>
+  <button id="search-btn">Find closest</button>
 </div>
 <script>
   var urlParams = new URLSearchParams(window.location.search);
