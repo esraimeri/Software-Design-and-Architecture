@@ -35,4 +35,14 @@ public class MultiLineStringFilter implements Filter {
 
         return filteredLines;
     }
+
+    @Override
+    public String getData() {
+        return "";
+    }
+
+    @Override
+    public void clearData() {
+
+    }
 }

@@ -4,6 +4,8 @@ import java.util.stream.IntStream;
 
 public class TypeFilter implements Filter {
 
+    private String data;
+
     @Override
     public Object execute(Object input) {
         String in = input.toString();
@@ -19,7 +21,8 @@ public class TypeFilter implements Filter {
         if (deleteIndex != -1) {
             String c = parts.get(deleteIndex).split(":")[1];
 
-            System.out.println("Type: " + PipeAndFilter.removeWhiteSpacesAndQuotes(c));
+            this.data = "Type: " + PipeAndFilter.removeWhiteSpacesAndQuotes(c);
+            //System.out.println(data);
             List<String> modifiedParts = IntStream.range(0, parts.size())
                     .filter(i -> i != deleteIndex)
                     .mapToObj(parts::get).collect(Collectors.toList());
@@ -30,6 +33,15 @@ public class TypeFilter implements Filter {
 
         return parts.stream().collect(Collectors.joining("\n"));
 
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    @Override
+    public void clearData() {
+        this.data = "";
     }
 
 }

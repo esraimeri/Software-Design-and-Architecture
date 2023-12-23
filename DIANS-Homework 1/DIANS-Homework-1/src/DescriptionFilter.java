@@ -4,6 +4,8 @@ import java.util.stream.IntStream;
 
 public class DescriptionFilter implements Filter {
 
+    private String data;
+
     @Override
     public Object execute(Object input) {
         String in = input.toString();
@@ -19,7 +21,9 @@ public class DescriptionFilter implements Filter {
         if (deleteIndex != -1) {
             String c = parts.get(deleteIndex).split(":")[1];
 
-            System.out.println("Description: " + PipeAndFilter.removeWhiteSpacesAndQuotes(c));
+//            this.data = PipeAndFilter.removeWhiteSpacesAndQuotes(c);
+            this.data = "Description: " + c;
+            //System.out.println(data);
 
 
             List<String> modifiedParts = IntStream.range(0, parts.size())
@@ -32,6 +36,16 @@ public class DescriptionFilter implements Filter {
 
         return parts.stream().collect(Collectors.joining("\n"));
 
+    }
+
+    @Override
+    public String getData() {
+        return data;
+    }
+
+    @Override
+    public void clearData() {
+        this.data = "";
     }
 
 }

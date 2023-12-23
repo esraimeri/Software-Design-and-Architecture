@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Home</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 
 <body>
@@ -39,9 +40,7 @@
         </select>
     </div>
 
-    <div id="map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d129338.21929475522!2d21.390317451650745!3d41.99559075937033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13542077276dd153%3A0x400fae0216e7f048!2sSkopje%2C%20North%20Macedonia!5e0!3m2!1sen!2sus!4v1574172622710!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-    </div>
+    <div id="map"></div>
 
     <div id="location-info">
         <p id="location-text">Location Information Goes Here</p>
@@ -49,6 +48,7 @@
 
     <button id="search-btn">Search</button>
 </div>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script>
     var urlParams = new URLSearchParams(window.location.search);
     var RUsername = urlParams.get('RUsername');
@@ -64,6 +64,15 @@
 
     var locationInfo = "This is a sample location information.";
     document.getElementById('location-text').textContent = locationInfo;
+
+    var map = L.map('map').setView([51.505, -0.09], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    var marker = L.marker([51.5, -0.1]).addTo(map);
+    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+
 </script>
 </body>
 </html>

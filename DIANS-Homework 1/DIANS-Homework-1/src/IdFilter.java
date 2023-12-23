@@ -5,6 +5,8 @@ import java.util.stream.IntStream;
 
 public class IdFilter implements Filter {
 
+    private String data = "";
+
     @Override
     public Object execute(Object input) {
 
@@ -20,7 +22,8 @@ public class IdFilter implements Filter {
 
         if (deleteIndex != -1) {
             String c = parts.get(deleteIndex).split("/")[1];
-            System.out.println("ID: " + c.substring(0, c.length() - 2));
+            data = "ID: " + c.substring(0, c.length() - 2);
+            //System.out.println(data);
             List<String> modifiedParts = IntStream.range(0, parts.size())
                     .filter(i -> i != deleteIndex)
                     .mapToObj(parts::get).collect(Collectors.toList());
@@ -31,5 +34,14 @@ public class IdFilter implements Filter {
 
         return parts.stream().collect(Collectors.joining("\n"));
 
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    @Override
+    public void clearData() {
+        this.data = "";
     }
 }
