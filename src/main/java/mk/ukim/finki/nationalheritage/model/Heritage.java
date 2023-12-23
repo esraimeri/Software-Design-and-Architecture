@@ -3,7 +3,7 @@ package mk.ukim.finki.nationalheritage.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-@Table (name="heritages") // TODO ASSIGN DATA SOURCE
+@Table (name="heritages") // TODO ASSIGN DATA SOURCE!!
 @Entity
 @Data
 public class Heritage {
@@ -19,6 +19,8 @@ public class Heritage {
         this.phoneNumber = phoneNumber;
         this.website = website;
         this.location = location;
+        lat = Double.parseDouble(location.split("\n")[0]);
+        lon = Double.parseDouble(location.split("\n")[1]);
     }
 
     @Id
@@ -38,6 +40,9 @@ public class Heritage {
     private String website;
 
     private String location;
+    private Double lat;
+    private Double lon;
+
 
     public String getLocation() {
         return location;
