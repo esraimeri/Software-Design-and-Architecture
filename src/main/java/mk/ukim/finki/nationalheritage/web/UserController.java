@@ -13,8 +13,8 @@ public class UserController {
         return "user/home.html";
     }
 
-    @GetMapping("/login_register")
-    public String showUserForm() {
-        return "user/login_register.html";
-    }
+//    @GetMapping("/login_register")
+//    public String showUserForm() {
+//        return "user/login_register.html";
+//    }
 }

@@ -13,7 +13,7 @@ import java.util.List;
 
 //TODO ADJUST ACCORDING TO THE NECESSARY FILTERS
 @Controller
-@RequestMapping("/heritages")
+@RequestMapping("/home")
 public class HeritageController {
 
     private final HeritageService heritageService;
@@ -33,12 +33,12 @@ public class HeritageController {
         }
 
         model.addAttribute("heritages", heritages);
-        return "heritages/home.html";
+        return "home/home.html";
     }
 
     @GetMapping("/add")
     public String showAdd(Model model) {
-        return "heritage/home.html";
+        return "home/home.html";
     }
 
 
