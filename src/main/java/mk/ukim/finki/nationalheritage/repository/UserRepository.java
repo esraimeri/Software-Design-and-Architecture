@@ -11,5 +11,5 @@ public interface UserRepository extends JpaRepository<User,Long> {
     List<User> findByBirthday(LocalDate birthday);
 
 
-    List<User> findByVisited(List<Heritage> tmep);
+    //List<User> findByVisited(List<Heritage> tmep);
 }

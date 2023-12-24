@@ -80,10 +80,10 @@ public class UserServiceImpl implements UserService {
         if (birthday != null) {
             return userRepository.findByBirthday(birthday);
         }
-        if (location != null) {
-            List<Heritage> heritageList = heritageRepository.findByLocation(location);
-            return userRepository.findByVisited(heritageList);
-        }
+//        if (location != null) {
+//            List<Heritage> heritageList = heritageRepository.findByLocation(location);
+//            return userRepository.findByVisited(heritageList);
+//        }
         return null;
     }
     @Override

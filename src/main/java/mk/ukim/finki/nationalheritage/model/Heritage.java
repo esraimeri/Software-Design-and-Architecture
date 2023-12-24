@@ -19,8 +19,8 @@ public class Heritage {
         this.phoneNumber = phoneNumber;
         this.website = website;
         this.location = location;
-        lat = Double.parseDouble(location.split(" ")[0]);
-        lon = Double.parseDouble(location.split(" ")[1]);
+        lat = Double.parseDouble(location.split(" ")[1]);
+        lon = Double.parseDouble(location.split(" ")[2]);
     }
 
     @Id
